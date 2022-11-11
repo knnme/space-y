@@ -1,17 +1,18 @@
-import React from 'react';
-import { ButtonComponent } from './styles';
-import { ReactNode } from 'react';
+import { ButtonComponent } from './styles'
 
-interface Props {
-  text: string;
+
+export interface ButtonProps {
+  text?: string;
+  fullWidth?: boolean;
 }
 
-
-
-function Button({text}: Props) {
+function Button({ text, fullWidth }: ButtonProps) {
   return (
     <>
-      <ButtonComponent>
+      <ButtonComponent
+        fullWidth={fullWidth}>
+
+
         {text}
       </ButtonComponent>
     </>
