@@ -5,7 +5,7 @@ import { ButtonProps } from ".";
 
 export const ButtonComponent = styled.button<ButtonProps>`
  background-color: var(--mars);
- width: ${({ fullWidth}) => (fullWidth ? "100%" : pixelToRem(200))};
+ width: ${({ fullWidth }) => (fullWidth ? "100%" : pixelToRem(264))};
  height: ${pixelToRem(62)};
  border-radius: ${pixelToRem(6)};
  border: none;

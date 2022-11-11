@@ -2,7 +2,11 @@ import Button from './components/Button';
 import Icon from './components/Icon';
 
 import { GlobalStyle } from './styles/globalstyles';
-import { Container, Header, Main, Intro, Logo, Title, Subtitle, Astronauts, DivButton, DivIcons } from './styles/styles';
+import { Container, Header, Main, Intro, Logo, Title, Subtitle, Astronauts, DivButton, DivIcons, SectionAbout, ContainerAbout, ImageMars, DivAboutMars, AboutTitle, AboutText, TextGallery, Gallery } from './styles/styles';
+
+export interface GalleryFlexProps { 
+  flex: "row" | "column" 
+}
 
 
 function App() {
@@ -10,7 +14,7 @@ function App() {
     <>
       <GlobalStyle />
 
-      <Container>
+      <Container flex={"column"}>
       
         <Header>
           <Logo>
@@ -39,6 +43,39 @@ function App() {
         </DivIcons>
 
       </Container>
+
+      <SectionAbout>
+        <ContainerAbout>
+          
+            <ImageMars />
+
+          <DivAboutMars>
+            <Intro>Por que Marte?</Intro>
+
+            <AboutTitle>Sobre o planeta vermelho</AboutTitle>
+
+            <AboutText>
+              A uma distância média de 140 milhões de milhas, Marte é um dos vizinhos habitáveis ​​mais próximos da Terra. Marte está mais ou menos a metade da distância da Terra do Sol, então ainda tem luz solar decente. Está um pouco frio, mas podemos esquentar. Sua atmosfera é composta principalmente de CO2 com um pouco de nitrogênio e argônio e alguns outros oligoelementos, o que significa que podemos cultivar plantas em Marte apenas comprimindo a atmosfera.
+            </AboutText>
+
+            <AboutText>
+              A gravidade em Marte é cerca de 38% da da Terra, então você seria capaz de levantar coisas pesadas e dar voltas. Além disso, o dia está notavelmente próximo ao da Terra.
+            </AboutText>
+          </DivAboutMars>
+        </ContainerAbout>
+
+        <Container flex={"row"}>
+            <TextGallery>
+              <Logo>
+                <img src="/images/logo.svg" alt="Logo SpaceY" />
+              </Logo>
+              O caminho para tornar a humanidade multiplanetária.
+            </TextGallery>
+            <Gallery>
+
+            </Gallery>
+        </Container>
+      </SectionAbout>
     </>
   );
 };
