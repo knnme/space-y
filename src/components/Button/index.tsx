@@ -9,13 +9,17 @@ export interface ButtonProps {
 function Button({ text, fullWidth }: ButtonProps) {
   return (
     <>
-      <ButtonComponent
-        fullWidth={fullWidth}>
+      
+        <ButtonComponent
+          fullWidth={fullWidth}>
+        
+          {text}
+          
+        </ButtonComponent>
 
-
-        {text}
-      </ButtonComponent>
+      
     </>
+    
   );
 }
 

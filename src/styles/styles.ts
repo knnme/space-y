@@ -15,9 +15,11 @@ export const Header = styled.div`
  padding-bottom: ${pixelToRem(95)};
 `;
 
-export const Logo = styled.image`
- width: ${pixelToRem(201)};
- height: ${pixelToRem(41)};
+export const Logo = styled.div<GalleryFlexProps>`
+ width: ${({logo}) => (logo ? pixelToRem(201) : pixelToRem(108))};
+ height: ${({logo}) => (logo ? pixelToRem(41) : pixelToRem(25))};
+ background-image: url("/images/logo.svg");
+ background-repeat: no-repeat;
 `;
 
 export const Main = styled.div`
@@ -28,16 +30,20 @@ export const Main = styled.div`
 `;
 
 export const Intro = styled.p`
- color: var(--sun);
- font: var(--font-text-5);
- letter-spacing: ${pixelToRem(5)};
- text-transform: uppercase;
+  color: var(--sun);
+  font-style: normal;
+  font-weight: 500;
+  font-size: ${pixelToRem(18)};
+  line-height: ${pixelToRem(32)};
+  letter-spacing: ${pixelToRem(5)};
+  text-transform: uppercase;
 `;
 
 export const Title = styled.p`
  color: var(--text);
  font: var(--font-display);
  letter-spacing: ${pixelToRem(1)};
+ padding: ${pixelToRem(4, 0, 12, 0)};
 
  span {
   color: var(--sun);
@@ -46,9 +52,11 @@ export const Title = styled.p`
 
 export const Subtitle = styled.p`
  color: var(--gray-05);
- font: var(--font-heading-3);
+ font-weight: 400;
+ font-size: ${pixelToRem(20)};
  letter-spacing: ${pixelToRem(1)};
  line-height: ${pixelToRem(24)};
+ padding-top: ${pixelToRem(12)};
 `;
 
 export const DivButton = styled.div`
@@ -60,6 +68,10 @@ export const Astronauts = styled.image`
  position: absolute;
  top: ${pixelToRem(16)};
  right: 0;
+ width: ${pixelToRem(550)};
+ height: ${pixelToRem(563)};
+ background-image: url("/images/Astronauts.svg");
+ background-repeat: no-repeat;
 `;
 
 export const DivIcons = styled.div`
@@ -73,18 +85,27 @@ export const SectionAbout = styled.div`
   background: url("/images/stars.svg"), var(--background-section);
 `;
 
-export const ContainerAbout = styled.div`
+export const ContainerAbout = styled.div<GalleryFlexProps>`
+  display: flex;
+  flex-direction: ${(props => props.flex)};
+  justify-content: space-around;
+  align-items: ${(props => props.align)};
+  max-width: ${pixelToRem(1440)};
+  margin: 0 auto;
+`;
+
+export const ContentAbout = styled.div `
   display: flex;
   justify-content: space-around;
   align-items: center;
-  max-width: ${pixelToRem(1440)};
-  margin: 0 auto;
+  
 `;
 
 export const ImageMars = styled.div`
 width: ${pixelToRem(626)};
 height: ${pixelToRem(626)};
 background-image: url('/images/mars.svg');
+z-index: 1;
 `;
 
 export const DivAboutMars = styled.div`
@@ -113,16 +134,47 @@ line-height: ${pixelToRem(24)};
 `;
 
 export const TextGallery = styled.div`
+  font-weight: 700;
+  font-size: ${pixelToRem(32)};
+  line-height: ${pixelToRem(48)};
+  letter-spacing: ${pixelToRem(1)};
+  color: var(--text);
+  padding: ${pixelToRem(13, 0, 16, 0)};
+
+  span {
+    color: var(--sun);
+  }
+`;
+
+export const ButtonSubscribe = styled.div`
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  color: var(--mars-light);
+  font-size: ${pixelToRem(18)};
+  line-height: ${pixelToRem(26)};
+`;
+
+export const LeftGallery = styled.div `
   display: flex;
   flex-direction: column;
   width: ${pixelToRem(485)};
   height: ${pixelToRem(229)};
-  
-  font: var(--font-heading-1);
-  color: var(--text);
-  letter-spacing: ${pixelToRem(1)};
+
 `;
 
 export const Gallery = styled.div`
   
+`;
+
+export const Lines = styled.image`
+  width: ${pixelToRem(553)};
+  height: ${pixelToRem(1163)};
+  background-image: url('images/lines.svg');
+  position: absolute;
+  left: 0;
+  top: ${pixelToRem(1000)};
+  opacity: 0.4;
+  z-index: 0;
+
 `;
