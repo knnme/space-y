@@ -17,7 +17,7 @@ export const Header = styled.div`
 `;
 
 export const Logo = styled.div<GalleryFlexProps>`
- width: ${({logo}) => (logo ? pixelToRem(201) : pixelToRem(108))};
+ width: ${({logo}) => (logo ? pixelToRem(201) : pixelToRem(162))};
  height: ${({logo}) => (logo ? pixelToRem(41) : pixelToRem(25))};
  background-image: url("/images/logo.svg");
  background-repeat: no-repeat;
@@ -81,9 +81,10 @@ export const DivIcons = styled.div`
   align-items: center;
 `;
 
-export const SectionAbout = styled.div<GalleryFlexProps>`
+export const Section = styled.div<GalleryFlexProps>`
   margin: 0 auto;
-  background: ${(props) => props.background}
+  background: ${(props) => props.background};
+  padding-top: ${(props) => props.padding};
   /* background: url("/images/stars.svg"), var(--background-section); */
 `;
 
@@ -137,10 +138,7 @@ line-height: ${pixelToRem(24)};
 `;
 
 export const TextGallery = styled.div`
-  font-weight: 700;
-  font-size: ${pixelToRem(32)};
-  line-height: ${pixelToRem(48)};
-  letter-spacing: ${pixelToRem(1)};
+  font: var(--font-heading-1);
   color: var(--text);
   padding: ${pixelToRem(13, 0, 16, 0)};
 
@@ -161,7 +159,7 @@ export const ButtonSubscribe = styled.div`
 export const LeftGallery = styled.div `
   display: flex;
   flex-direction: column;
-  min-width: ${pixelToRem(485)};
+  min-width: ${pixelToRem(425)};
   height: ${pixelToRem(229)};
 
 `;
@@ -197,6 +195,7 @@ export const FormSection = styled.div`
  height: ${pixelToRem(792)};
  background: var(--background-form);
  border-radius: ${pixelToRem(20)};
+ margin-right: ${pixelToRem(62)};
 `;
 
 export const Form = styled.div`
@@ -213,6 +212,7 @@ background-image: url('/images/icon-ticket.svg');
 `;
 
 export const FormTextMain = styled.p`
+width: ${pixelToRem(264)};
 font-weight: 500;
 font-size: ${pixelToRem(24)};
 line-height: ${pixelToRem(32)};
@@ -222,6 +222,7 @@ color: var(--text);
 `;
 
 export const FormTextSub = styled.p`
+width: ${pixelToRem(305)};
 font-weight: 500;
 font-size: ${pixelToRem(16)};
 line-height: ${pixelToRem(20)};
@@ -241,4 +242,27 @@ export const Checkbox = styled.div`
  border-radius: ${pixelToRem(6)};
  margin-right: ${pixelToRem(16)};
  border: 1.5px solid #FFF;
+`;
+
+export const RocketIllustrator = styled.image`
+ width: ${pixelToRem(547)};
+ height: ${pixelToRem(848)};
+ margin-left: ${pixelToRem(62)};
+ background-image: url("/images/rocket_illustra.svg");
+ background-repeat: no-repeat;
+`;
+
+export const SmokeFooter = styled.image`
+ max-width: ${pixelToRem(1440)};
+ height: ${pixelToRem(275)};
+ background-image: url("/images/smoke-footer.svg");
+ background-repeat: no-repeat;
+`;
+export const Footer = styled.div `
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const ContainerFooter = styled.div`
+display: flex;
 `;

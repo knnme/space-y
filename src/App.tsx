@@ -2,6 +2,8 @@ import Button from './components/Button';
 import Icon from './components/Icon';
 import InputsText from './components/InputsTexts';
 import Input from './components/Inputs';
+import SocialIcons from './components/SocialIcons';
+import Menu from './components/menu';
 
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -53,7 +55,7 @@ function App() {
 
       </S.Container>
 
-      <S.SectionAbout background='url("/images/stars.svg"), var(--background-section)'>
+      <S.Section background='url("/images/stars.svg"), var(--background-section)'>
         <S.ContainerAbout flex={'column'}>
           <S.ContentAbout>
             <S.ImageMars />
@@ -108,9 +110,9 @@ function App() {
             </S.Gallery>
           </S.Container>
         </S.ContainerAbout>
-      </S.SectionAbout>
+      </S.Section>
 
-      <S.SectionAbout background='url("images/stars.svg"), #0D0E13'>
+      <S.Section background='url("images/stars.svg"), #0D0E13' padding={"180px"}>
         <S.Container>
           <S.FormSection>
             <S.Form>
@@ -134,8 +136,30 @@ function App() {
               <Button text='Garantir minha vaga'/>
             </S.Form>
           </S.FormSection>
+            <S.RocketIllustrator />
         </S.Container>
-      </S.SectionAbout>
+      </S.Section>
+      <S.Section  background='url("images/stars.svg"), #0D0E13'>
+        <S.Container flex='column'>
+          <S.SmokeFooter />
+          <S.Footer>
+            <S.ContainerFooter>
+              <S.Logo logo/>
+            </S.ContainerFooter>
+            <S.ContainerFooter>
+              <SocialIcons src='/images/instagram.svg'/>
+              <SocialIcons src='/images/linkedin.svg'/>
+              <SocialIcons src='/images/facebook.svg'/>
+            </S.ContainerFooter>
+            <S.ContainerFooter>
+              <Menu text='Inicio' margin/>
+              <Menu text='Sobre nós' margin/>
+              <Menu text='Missões' margin/>
+              <Menu text='Contato'/>
+            </S.ContainerFooter>
+          </S.Footer>
+        </S.Container>
+      </S.Section>
     </>
   );
 };
