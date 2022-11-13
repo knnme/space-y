@@ -9,5 +9,8 @@ export const InputComponent = styled.input`
     border-radius: 6px;
     border: 1px solid #D5D5DB;
     margin-bottom: ${pixelToRem(24)};
+    padding: ${pixelToRem(12)};
+    color: var(--text);
+    font-size: ${pixelToRem(20)};
  
 `;

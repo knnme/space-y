@@ -128,7 +128,7 @@ function App() {
               <InputsText text="E-mail" />
               <Input/>
               <InputsText text="Telefone" />
-              <Input/>
+              <Input />
               <S.CheckText>
                 <S.Checkbox/>
                 <InputsText text="Concordo em receber notificações" />
