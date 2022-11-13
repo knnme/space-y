@@ -5,6 +5,7 @@ import { GalleryFlexProps } from "../App";
 export const Container = styled.div<GalleryFlexProps>` 
  display: flex;
  flex-direction: ${(props => props.flex)};
+ align-items: ${(props) => props.align};
  padding: ${pixelToRem(26, 70, 50)};
  width: ${pixelToRem(1266)};
  margin: 0 auto;
@@ -80,13 +81,14 @@ export const DivIcons = styled.div`
   align-items: center;
 `;
 
-export const SectionAbout = styled.div`
+export const SectionAbout = styled.div<GalleryFlexProps>`
   margin: 0 auto;
-  background: url("/images/stars.svg"), var(--background-section);
+  background: ${(props) => props.background}
+  /* background: url("/images/stars.svg"), var(--background-section); */
 `;
 
 export const ContainerAbout = styled.div<GalleryFlexProps>`
-  display: flex;
+display: flex;
   flex-direction: ${(props => props.flex)};
   justify-content: space-around;
   align-items: ${(props => props.align)};
@@ -98,6 +100,7 @@ export const ContentAbout = styled.div `
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding-bottom: ${pixelToRem(95)};
   
 `;
 
@@ -158,13 +161,20 @@ export const ButtonSubscribe = styled.div`
 export const LeftGallery = styled.div `
   display: flex;
   flex-direction: column;
-  width: ${pixelToRem(485)};
+  min-width: ${pixelToRem(485)};
   height: ${pixelToRem(229)};
 
 `;
 
 export const Gallery = styled.div`
-  
+  display: flex;
+  width: ${pixelToRem(749)};
+  height: ${pixelToRem(353)};
+  border-radius: ${pixelToRem(10)};
+`;
+
+export const ImgGallery = styled.img<GalleryFlexProps>`
+border-radius: ${pixelToRem(10)};
 `;
 
 export const Lines = styled.image`
@@ -176,5 +186,59 @@ export const Lines = styled.image`
   top: ${pixelToRem(1000)};
   opacity: 0.4;
   z-index: 0;
+`;
 
+export const FormSection = styled.div`
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ width: ${pixelToRem(520)};
+ height: ${pixelToRem(792)};
+ background: var(--background-form);
+ border-radius: ${pixelToRem(20)};
+`;
+
+export const Form = styled.div`
+ width: ${pixelToRem(417)};
+ height: ${pixelToRem(676)};
+`;
+
+export const TicketIcon = styled.div`
+width: ${pixelToRem(56)};
+height: ${pixelToRem(56)};
+margin-bottom: ${pixelToRem(16)};
+background-image: url('/images/icon-ticket.svg');
+
+`;
+
+export const FormTextMain = styled.p`
+font-weight: 500;
+font-size: ${pixelToRem(24)};
+line-height: ${pixelToRem(32)};
+letter-spacing: ${pixelToRem(1)};
+margin-bottom: ${pixelToRem(16)};
+color: var(--text);
+`;
+
+export const FormTextSub = styled.p`
+font-weight: 500;
+font-size: ${pixelToRem(16)};
+line-height: ${pixelToRem(20)};
+margin-bottom: ${pixelToRem(32)};
+opacity: 0.7;
+color: var(--text);
+`;
+
+export const CheckText = styled.div`
+  display: flex;
+  margin-bottom: ${pixelToRem(32)};
+`;
+
+export const Checkbox = styled.div`
+ width: ${pixelToRem(24)};
+ height: ${pixelToRem(24)};
+ border-radius: ${pixelToRem(6)};
+ margin-right: ${pixelToRem(16)};
+ border: 1.5px solid #FFF;
 `;

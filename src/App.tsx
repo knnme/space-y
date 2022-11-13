@@ -1,5 +1,13 @@
 import Button from './components/Button';
 import Icon from './components/Icon';
+import InputsText from './components/InputsTexts';
+import Input from './components/Inputs';
+
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper';
+import 'swiper/css'
+import 'swiper/css/navigation'
 
 import { GlobalStyle } from './styles/globalstyles';
 import * as S from './styles/styles';
@@ -7,16 +15,19 @@ import * as S from './styles/styles';
 export interface GalleryFlexProps { 
   flex?: "row" | "column";
   align?: "center" | "flex-start";
+  padding?: string;
   logo?:  boolean;
+  src?: string;
+  justify?: "space-around"
+  background?: string;
 }
-
 
 function App() {
   return (
     <>
       <GlobalStyle />
 
-      <S.Container flex={"column"}>
+      <S.Container flex={"column"} >
       
         <S.Header>
           <S.Logo logo/>
@@ -42,15 +53,7 @@ function App() {
 
       </S.Container>
 
-
-
-
-
-
-
-      
-
-      <S.SectionAbout>
+      <S.SectionAbout background='url("/images/stars.svg"), var(--background-section)'>
         <S.ContainerAbout flex={'column'}>
           <S.ContentAbout>
             <S.ImageMars />
@@ -68,15 +71,13 @@ function App() {
                 A gravidade em Marte é cerca de 38% da da Terra, então você seria capaz de levantar coisas pesadas e dar voltas. Além disso, o dia está notavelmente próximo ao da Terra.
               </S.AboutText>
             </S.DivAboutMars>
-          <S.Lines />
+           <S.Lines />
           </S.ContentAbout>
 
-
-
-          <S.Container flex={'row'}>
+          <S.Container flex={'row'} justify={'space-around'} align={'center'}>
             <S.LeftGallery>
-              <S.Logo />
               <S.TextGallery>
+              <S.Logo />
                 O caminho para <br/> tornar a humanidade multiplanetária<span>.</span>
               </S.TextGallery>
               <S.ButtonSubscribe>
@@ -84,10 +85,56 @@ function App() {
               </S.ButtonSubscribe>
             </S.LeftGallery>
             <S.Gallery>
-
+              <Swiper spaceBetween={150} slidesPerView={2.5} navigation={true} modules={[Navigation]} className="mySwiper">
+                <SwiperSlide>
+                  <S.ImgGallery src='/images/gallery-1.svg'/>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <S.ImgGallery src='/images/gallery-2.svg'/>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <S.ImgGallery src='/images/gallery-3.svg'/>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <S.ImgGallery src='/images/gallery-1.svg'/>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <S.ImgGallery src='/images/gallery-2.svg'/>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <S.ImgGallery src='/images/gallery-3.svg'/>
+                </SwiperSlide>
+              </Swiper>
             </S.Gallery>
           </S.Container>
         </S.ContainerAbout>
+      </S.SectionAbout>
+
+      <S.SectionAbout background='url("images/stars.svg"), #0D0E13'>
+        <S.Container>
+          <S.FormSection>
+            <S.Form>
+              <S.TicketIcon />
+              <S.FormTextMain>
+                Garanta sua vaga para a primeira viagem
+              </S.FormTextMain>
+              <S.FormTextSub>
+                Preencha os campos abaixo para entrar na lista de espera
+              </S.FormTextSub>
+              <InputsText text="Seu nome" />
+              <Input/>
+              <InputsText text="E-mail" />
+              <Input/>
+              <InputsText text="Telefone" />
+              <Input/>
+              <S.CheckText>
+                <S.Checkbox/>
+                <InputsText text="Concordo em receber notificações" />
+              </S.CheckText>
+              <Button text='Garantir minha vaga'/>
+            </S.Form>
+          </S.FormSection>
+        </S.Container>
       </S.SectionAbout>
     </>
   );

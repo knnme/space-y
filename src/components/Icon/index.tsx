@@ -3,7 +3,7 @@ import { DivIcon, ImageIcon, TextIcon } from './styles';
 export interface IconProps {
   src: string;
   alt?: string;
-  txt: string;
+  txt?: string;
 }
 
 function Icon ({src, alt, txt}: IconProps) {
