@@ -1,3 +1,13 @@
+/* eslint-disable no-template-curly-in-string */
+import { GlobalStyle } from './styles/globalstyles';
+import * as S from './styles/styles';
+import { pixelToRem } from './components/utils/pixelToRem';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper';
+import 'swiper/css'
+import 'swiper/css/navigation'
+
 import Button from './components/Button';
 import Icon from './components/Icon';
 import InputsText from './components/InputsTexts';
@@ -5,22 +15,17 @@ import Input from './components/Inputs';
 import SocialIcons from './components/SocialIcons';
 import Menu from './components/menu';
 
-
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper';
-import 'swiper/css'
-import 'swiper/css/navigation'
-
-import { GlobalStyle } from './styles/globalstyles';
-import * as S from './styles/styles';
-
-export interface GalleryFlexProps { 
-  flex?: "row" | "column";
-  align?: "center" | "flex-start";
+export interface ContainersProps { 
+  align?: string;
+  flex?: string;
   padding?: string;
+  width?: string;
+  margin?: string;
+  justify?: string;
+  maxWidth?: string;
+
   logo?:  boolean;
   src?: string;
-  justify?: "space-around"
   background?: string;
 }
 
@@ -29,7 +34,7 @@ function App() {
     <>
       <GlobalStyle />
 
-      <S.Container flex={"column"} >
+      <S.Container flex={"column"} padding={pixelToRem(26, 70, 50)} width={pixelToRem(1266)} margin='0 auto'>
       
         <S.Header>
           <S.Logo logo/>
@@ -56,7 +61,7 @@ function App() {
       </S.Container>
 
       <S.Section background='url("/images/stars.svg"), var(--background-section)'>
-        <S.ContainerAbout flex={'column'}>
+        <S.Container flex={'column'} justify="space-around" align='start' maxWidth={pixelToRem(1440)} margin='0 auto'>
           <S.ContentAbout>
             <S.ImageMars />
 
@@ -76,7 +81,7 @@ function App() {
            <S.Lines />
           </S.ContentAbout>
 
-          <S.Container flex={'row'} justify={'space-around'} align={'center'}>
+          <S.Container flex={'row'} justify={'space-around'} align={'center'} padding={pixelToRem(26, 0, 50, 70)}>
             <S.LeftGallery>
               <S.TextGallery>
               <S.Logo />
@@ -87,7 +92,7 @@ function App() {
               </S.ButtonSubscribe>
             </S.LeftGallery>
             <S.Gallery>
-              <Swiper spaceBetween={150} slidesPerView={2.5} navigation={true} modules={[Navigation]} className="mySwiper">
+              <Swiper spaceBetween={50} slidesPerView={4} navigation={true} modules={[Navigation]} className="mySwiper">
                 <SwiperSlide>
                   <S.ImgGallery src='/images/gallery-1.svg'/>
                 </SwiperSlide>
@@ -109,11 +114,11 @@ function App() {
               </Swiper>
             </S.Gallery>
           </S.Container>
-        </S.ContainerAbout>
+        </S.Container>
       </S.Section>
 
       <S.Section background='url("images/stars.svg"), #0D0E13' padding={"180px"}>
-        <S.Container>
+        <S.Container padding={pixelToRem(26, 70, 50)} width={pixelToRem(1266)} margin='0 auto'>
           <S.FormSection>
             <S.Form>
               <S.TicketIcon />
@@ -140,23 +145,25 @@ function App() {
         </S.Container>
       </S.Section>
       <S.Section  background='url("images/stars.svg"), #0D0E13'>
-        <S.Container flex='column'>
+        <S.Container maxWidth={pixelToRem(1440)} margin='0 auto'>
           <S.SmokeFooter />
+        </S.Container>
+        <S.Container flex='column' padding={pixelToRem(0, 0, 15)} width={pixelToRem(1266)} margin='0 auto'>
           <S.Footer>
-            <S.ContainerFooter>
+            <S.Container>
               <S.Logo logo/>
-            </S.ContainerFooter>
-            <S.ContainerFooter>
+            </S.Container>
+            <S.Container>
               <SocialIcons src='/images/instagram.svg'/>
               <SocialIcons src='/images/linkedin.svg'/>
               <SocialIcons src='/images/facebook.svg'/>
-            </S.ContainerFooter>
-            <S.ContainerFooter>
+            </S.Container>
+            <S.Container>
               <Menu text='Inicio' margin/>
               <Menu text='Sobre nós' margin/>
               <Menu text='Missões' margin/>
               <Menu text='Contato'/>
-            </S.ContainerFooter>
+            </S.Container>
           </S.Footer>
         </S.Container>
       </S.Section>

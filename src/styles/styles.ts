@@ -1,14 +1,17 @@
 import styled from "styled-components";
 import { pixelToRem } from "../components/utils/pixelToRem";
-import { GalleryFlexProps } from "../App";
+import { ContainersProps } from "../App";
 
-export const Container = styled.div<GalleryFlexProps>` 
+export const Container = styled.div<ContainersProps>` 
  display: flex;
- flex-direction: ${(props => props.flex)};
+ flex-direction: ${(props) => props.flex};
  align-items: ${(props) => props.align};
- padding: ${pixelToRem(26, 70, 50)};
- width: ${pixelToRem(1266)};
- margin: 0 auto;
+ justify-content: ${(props) => props.justify};
+ padding: ${(props) => props.padding};
+ width: ${(props) => props.width};
+ margin: ${(props) => props.margin};
+ max-width: ${(props) => props.maxWidth};
+ overflow: hidden;
 `;
 
 export const Header = styled.div`
@@ -16,7 +19,7 @@ export const Header = styled.div`
  padding-bottom: ${pixelToRem(95)};
 `;
 
-export const Logo = styled.div<GalleryFlexProps>`
+export const Logo = styled.div<ContainersProps>`
  width: ${({logo}) => (logo ? pixelToRem(201) : pixelToRem(162))};
  height: ${({logo}) => (logo ? pixelToRem(41) : pixelToRem(25))};
  background-image: url("/images/logo.svg");
@@ -81,20 +84,11 @@ export const DivIcons = styled.div`
   align-items: center;
 `;
 
-export const Section = styled.div<GalleryFlexProps>`
+export const Section = styled.div<ContainersProps>`
   margin: 0 auto;
   background: ${(props) => props.background};
   padding-top: ${(props) => props.padding};
   /* background: url("/images/stars.svg"), var(--background-section); */
-`;
-
-export const ContainerAbout = styled.div<GalleryFlexProps>`
-display: flex;
-  flex-direction: ${(props => props.flex)};
-  justify-content: space-around;
-  align-items: ${(props => props.align)};
-  max-width: ${pixelToRem(1440)};
-  margin: 0 auto;
 `;
 
 export const ContentAbout = styled.div `
@@ -102,7 +96,6 @@ export const ContentAbout = styled.div `
   justify-content: space-around;
   align-items: center;
   padding-bottom: ${pixelToRem(95)};
-  
 `;
 
 export const ImageMars = styled.div`
@@ -125,7 +118,6 @@ font-size: ${pixelToRem(32)};
 line-height: ${pixelToRem(48)};
 letter-spacing: ${pixelToRem(1)};
 padding: ${pixelToRem(14, 0, 16, 0)};
-
 `;
 
 export const AboutText = styled.p`
@@ -159,19 +151,19 @@ export const ButtonSubscribe = styled.div`
 export const LeftGallery = styled.div `
   display: flex;
   flex-direction: column;
-  min-width: ${pixelToRem(425)};
+  min-width: ${pixelToRem(440)};
   height: ${pixelToRem(229)};
 
 `;
 
 export const Gallery = styled.div`
   display: flex;
-  width: ${pixelToRem(749)};
+  width: ${pixelToRem(1440)};
   height: ${pixelToRem(353)};
   border-radius: ${pixelToRem(10)};
 `;
 
-export const ImgGallery = styled.img<GalleryFlexProps>`
+export const ImgGallery = styled.img<ContainersProps>`
 border-radius: ${pixelToRem(10)};
 `;
 
@@ -253,7 +245,7 @@ export const RocketIllustrator = styled.image`
 `;
 
 export const SmokeFooter = styled.image`
- max-width: ${pixelToRem(1440)};
+ width: ${pixelToRem(1550)};
  height: ${pixelToRem(275)};
  background-image: url("/images/smoke-footer.svg");
  background-repeat: no-repeat;
