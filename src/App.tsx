@@ -35,7 +35,7 @@ function App() {
     <>
       <GlobalStyle/>
 
-      <S.Section flex={"column"} padding={pixelToRem(26, 70, 80)} margin='0 auto'>
+      <S.Section flex={"column"} padding={pixelToRem(26, 70, 80)} >
       
         <S.Header>
           <S.Logo logo/>
@@ -51,7 +51,18 @@ function App() {
         </S.Main>
         <S.Astronauts />
 
-        <S.DivIcons>
+        <S.DivIcons
+        whileInView="visible"
+        initial="initial"
+        viewport={{ once: true }}
+        variants={{
+          initial: { opacity: 0, y: 10 },
+          visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 1, delay: 0.3 },
+            },
+          }}>
           <Icon src='/images/icon-rocket.svg' txt ="Foguetes com a mais alta tecnologia e conforto." alt="Rocket" />
           <Icon src='/images/icon-flag.svg' txt ="Mais de 100 missões consecutivas com sucesso." alt="Flag" />
           <Icon src='/images/icon-scope.svg' txt ="Experiencia única e exclusiva." alt="Telescope" />
@@ -61,7 +72,18 @@ function App() {
 
       <S.Section background='url("/images/stars.svg"), var(--background-section)' flex={'column'} margin='0 auto' padding={pixelToRem(0, 0, 250, 70)}>
         <S.Container margin='0 auto' align='center'>
-          <S.ImageMars />
+          <S.ImageMars 
+          whileInView="visible"
+          initial="initial"
+          viewport={{ once: true }}
+          variants={{
+            initial: { opacity: 0, x: "-100%" },
+            visible: {
+                opacity: 1,
+                x: 0,
+                transition: { duration: 2, delay: 0.5 },
+                },
+              }} />
 
           <S.DivAboutMars>
             <S.Intro>Por que Marte?</S.Intro>
@@ -85,7 +107,17 @@ function App() {
               <S.Logo />
               O caminho para <br/> tornar a humanidade multiplanetária<span>.</span>
             </S.TextGallery>
-            <S.ButtonSubscribe>
+            <S.ButtonSubscribe whileInView="visible"
+              initial="initial"
+              viewport={{ once: true }}
+              variants={{
+                initial: { opacity: 0, y: '100' },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 1, delay: 1 },
+                },
+              }}>
                 Inscreva-se agora
             </S.ButtonSubscribe>
           </S.LeftGallery>
@@ -116,7 +148,17 @@ function App() {
 
       <S.Section background='url("images/stars.svg"), #0D0E13'>
         <S.Container padding={pixelToRem(0, 70)} margin='0 auto' justify='center'>
-          <S.FormSection>
+          <S.FormSection  whileInView="visible"
+            initial="initial"
+            viewport={{ once: true }}
+            variants={{
+              initial: { opacity: 0, x: -60 },
+              visible: {
+                opacity: 1,
+                x: 0,
+                transition: { duration: 1, delay: 1.5 },
+              },
+            }}>
             <S.Form>
               <S.TicketIcon />
               <S.FormTextMain>
@@ -138,7 +180,17 @@ function App() {
               <Button text='Garantir minha vaga'/>
             </S.Form>
           </S.FormSection>
-            <S.RocketIllustrator />
+            <S.RocketIllustrator whileInView="visible"
+            initial="initial"
+            viewport={{ once: true }}
+            variants={{
+              initial: { opacity: 0, y: 500 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: 1.5, delay: 1 },
+              },
+            }}/>
         </S.Container>
       </S.Section>
       <S.Section  background='url("images/stars.svg"), #0D0E13'>

@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { pixelToRem } from "../components/utils/pixelToRem";
 import { ContainersProps } from "../App";
+import { motion } from 'framer-motion';
+
 
 export const Header = styled.div`
  padding-bottom: ${pixelToRem(95)};
@@ -136,7 +138,7 @@ export const DivButton = styled.div`
   
 `;
 
-export const DivIcons = styled.div`
+export const DivIcons = styled(motion.div)`
   display: flex;
   padding-top: ${pixelToRem(125)};
 
@@ -147,7 +149,7 @@ export const DivIcons = styled.div`
 
 `;
 
-export const ImageMars = styled.div`
+export const ImageMars = styled(motion.image)`
 width: ${pixelToRem(626)};
 height: ${pixelToRem(626)};
 background-image: url('/images/mars.svg');
@@ -193,7 +195,7 @@ export const TextGallery = styled.div`
   }
 `;
 
-export const ButtonSubscribe = styled.div`
+export const ButtonSubscribe = styled(motion.p)`
   display: flex;
   align-items: center;
   font-weight: 700;
@@ -245,7 +247,7 @@ export const Lines = styled.image`
   }
 `;
 
-export const FormSection = styled.div`
+export const FormSection = styled(motion.div)`
  display: flex;
  flex-direction: column;
  align-items: center;
@@ -307,9 +309,9 @@ export const Checkbox = styled.div`
  
 `;
 
-export const RocketIllustrator = styled.image`
+export const RocketIllustrator = styled(motion.image)`
  width: ${pixelToRem(547)};
- height: ${pixelToRem(848)};
+ height: ${pixelToRem(849)};
  margin-left: ${pixelToRem(62)};
  background-image: url("/images/rocket_illustra.svg");
  background-repeat: no-repeat;
