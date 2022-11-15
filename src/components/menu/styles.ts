@@ -7,7 +7,8 @@ font-weight: 500;
 font-size: ${pixelToRem(16)};
 line-height: ${pixelToRem(20)};
 color: var(--text);
-margin-right: ${({margin}) => (margin ? pixelToRem(32) : pixelToRem(0))};
-
-
+margin: ${({margin}) => (margin ? pixelToRem(0) : pixelToRem(0, 5))};
+@media screen and (max-width: 1023px) {
+    display: none;
+}
 `;

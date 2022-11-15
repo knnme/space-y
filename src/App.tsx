@@ -35,7 +35,7 @@ function App() {
     <>
       <GlobalStyle/>
 
-      <S.Section flex={"column"} padding={pixelToRem(26, 70, 80)} width={pixelToRem(1340)}  margin='0 auto'>
+      <S.Section flex={"column"} padding={pixelToRem(26, 70, 80)} margin='0 auto'>
       
         <S.Header>
           <S.Logo logo/>
@@ -49,13 +49,13 @@ function App() {
             <Button  text='Inscreva-se agora' fullWidth />
           </S.DivButton>
         </S.Main>
-
         <S.Astronauts />
-        <S.Container padding={pixelToRem(125, 0, 0)}>
+
+        <S.DivIcons>
           <Icon src='/images/icon-rocket.svg' txt ="Foguetes com a mais alta tecnologia e conforto." alt="Rocket" />
           <Icon src='/images/icon-flag.svg' txt ="Mais de 100 missões consecutivas com sucesso." alt="Flag" />
           <Icon src='/images/icon-scope.svg' txt ="Experiencia única e exclusiva." alt="Telescope" />
-        </S.Container>
+        </S.DivIcons>
       </S.Section>
 
 
@@ -142,23 +142,26 @@ function App() {
         </S.Container>
       </S.Section>
       <S.Section  background='url("images/stars.svg"), #0D0E13'>
-        <S.Container flex='column' padding={pixelToRem(0, 0, 15)} margin='0 auto'>
+        <S.Container padding={pixelToRem(0, 0, 15)} margin='0 auto'>
           <S.SmokeFooter />
-          <S.Footer>
-            <S.Container>
+          <S.Footer >
+            <S.Container padding={pixelToRem(0, 246, 0, 112)}>
               <S.Logo logo/>
             </S.Container>
-            <S.Container>
+
+            <S.ContainerSocial >
               <SocialIcons src='/images/instagram.svg'/>
               <SocialIcons src='/images/linkedin.svg'/>
               <SocialIcons src='/images/facebook.svg'/>
-            </S.Container>
-            <S.Container>
-              <Menu text='Inicio' margin/>
-              <Menu text='Sobre nós' margin/>
-              <Menu text='Missões' margin/>
+            </S.ContainerSocial>
+       
+            <S.Container >
+              <Menu text='Inicio' />
+              <Menu text='Sobre nós' />
+              <Menu text='Missões' />
               <Menu text='Contato'/>
             </S.Container>
+ 
           </S.Footer>
         </S.Container>
       </S.Section>

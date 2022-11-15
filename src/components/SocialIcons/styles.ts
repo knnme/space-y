@@ -13,4 +13,8 @@ export const SocialIconsComponent = styled.image<SocialIconsProps>`
 
 export const DivContainer = styled.div`
     display: flex;
+
+    @media screen and (max-width: 1023px) {
+        flex-direction: row;
+}
 `;

@@ -15,8 +15,13 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background: var(--background); 
-    max-width: ${pixelToRem(1340)};
-    margin: 0 auto;
+}
+
+html {
+    @media screen and (max-width: 768px) {
+        font-size: 50%;
+        text-align: center;
+}
 }
 
 :root {
