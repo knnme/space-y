@@ -20,6 +20,7 @@ export interface ContainersProps {
   flex?: string;
   padding?: string;
   width?: string;
+  height?: string;
   margin?: string;
   justify?: string;
   maxWidth?: string;
@@ -32,9 +33,9 @@ export interface ContainersProps {
 function App() {
   return (
     <>
-      <GlobalStyle />
+      <GlobalStyle/>
 
-      <S.Container flex={"column"} padding={pixelToRem(26, 70, 50)} width={pixelToRem(1266)} margin='0 auto'>
+      <S.Section flex={"column"} padding={pixelToRem(26, 70, 80)} width={pixelToRem(1340)}  margin='0 auto'>
       
         <S.Header>
           <S.Logo logo/>
@@ -47,52 +48,49 @@ function App() {
           <S.DivButton>
             <Button  text='Inscreva-se agora' fullWidth />
           </S.DivButton>
-
         </S.Main>
-        
-        <S.Astronauts/>
 
-        <S.DivIcons>
+        <S.Astronauts />
+        <S.Container padding={pixelToRem(125, 0, 0)}>
           <Icon src='/images/icon-rocket.svg' txt ="Foguetes com a mais alta tecnologia e conforto." alt="Rocket" />
           <Icon src='/images/icon-flag.svg' txt ="Mais de 100 missões consecutivas com sucesso." alt="Flag" />
           <Icon src='/images/icon-scope.svg' txt ="Experiencia única e exclusiva." alt="Telescope" />
-        </S.DivIcons>
+        </S.Container>
+      </S.Section>
 
-      </S.Container>
 
-      <S.Section background='url("/images/stars.svg"), var(--background-section)'>
-        <S.Container flex={'column'} justify="space-around" align='start' maxWidth={pixelToRem(1440)} margin='0 auto'>
-          <S.ContentAbout>
-            <S.ImageMars />
+      <S.Section background='url("/images/stars.svg"), var(--background-section)' flex={'column'} margin='0 auto' padding={pixelToRem(0, 0, 250, 70)}>
+        <S.Container margin='0 auto' align='center'>
+          <S.ImageMars />
 
-            <S.DivAboutMars>
-              <S.Intro>Por que Marte?</S.Intro>
+          <S.DivAboutMars>
+            <S.Intro>Por que Marte?</S.Intro>
 
-              <S.AboutTitle>Sobre o planeta vermelho</S.AboutTitle>
+            <S.AboutTitle>Sobre o planeta vermelho</S.AboutTitle>
 
-              <S.AboutText>
-                A uma distância média de 140 milhões de milhas, Marte é um dos vizinhos habitáveis ​​mais próximos da Terra. Marte está mais ou menos a metade da distância da Terra do Sol, então ainda tem luz solar decente. Está um pouco frio, mas podemos esquentar. Sua atmosfera é composta principalmente de CO2 com um pouco de nitrogênio e argônio e alguns outros oligoelementos, o que significa que podemos cultivar plantas em Marte apenas comprimindo a atmosfera.
-              </S.AboutText>
+            <S.AboutText>
+              A uma distância média de 140 milhões de milhas, Marte é um dos vizinhos habitáveis ​​mais próximos da Terra. Marte está mais ou menos a metade da distância da Terra do Sol, então ainda tem luz solar decente. Está um pouco frio, mas podemos esquentar. Sua atmosfera é composta principalmente de CO2 com um pouco de nitrogênio e argônio e alguns outros oligoelementos, o que significa que podemos cultivar plantas em Marte apenas comprimindo a atmosfera.
+            </S.AboutText>
 
-              <S.AboutText>
-                A gravidade em Marte é cerca de 38% da da Terra, então você seria capaz de levantar coisas pesadas e dar voltas. Além disso, o dia está notavelmente próximo ao da Terra.
-              </S.AboutText>
-            </S.DivAboutMars>
-           <S.Lines />
-          </S.ContentAbout>
+            <S.AboutText>
+              A gravidade em Marte é cerca de 38% da da Terra, então você seria capaz de levantar coisas pesadas e dar voltas. Além disso, o dia está notavelmente próximo ao da Terra.
+            </S.AboutText>
+          </S.DivAboutMars>
+          <S.Lines />
+        </S.Container>
 
-          <S.Container flex={'row'} justify={'space-around'} align={'center'} padding={pixelToRem(26, 0, 50, 70)}>
-            <S.LeftGallery>
-              <S.TextGallery>
+        <S.Container align={'center'} justify='space-between' padding={pixelToRem(121, 0, 0, 70)}>
+          <S.LeftGallery>
+            <S.TextGallery>
               <S.Logo />
-                O caminho para <br/> tornar a humanidade multiplanetária<span>.</span>
-              </S.TextGallery>
-              <S.ButtonSubscribe>
+              O caminho para <br/> tornar a humanidade multiplanetária<span>.</span>
+            </S.TextGallery>
+            <S.ButtonSubscribe>
                 Inscreva-se agora
-              </S.ButtonSubscribe>
-            </S.LeftGallery>
+            </S.ButtonSubscribe>
+          </S.LeftGallery>
             <S.Gallery>
-              <Swiper spaceBetween={50} slidesPerView={4} navigation={true} modules={[Navigation]} className="mySwiper">
+              <Swiper spaceBetween={300} slidesPerView={3} navigation={true} modules={[Navigation]} className="mySwiper">
                 <SwiperSlide>
                   <S.ImgGallery src='/images/gallery-1.svg'/>
                 </SwiperSlide>
@@ -113,12 +111,11 @@ function App() {
                 </SwiperSlide>
               </Swiper>
             </S.Gallery>
-          </S.Container>
         </S.Container>
       </S.Section>
 
-      <S.Section background='url("images/stars.svg"), #0D0E13' padding={"180px"}>
-        <S.Container padding={pixelToRem(26, 70, 50)} width={pixelToRem(1266)} margin='0 auto'>
+      <S.Section background='url("images/stars.svg"), #0D0E13'>
+        <S.Container padding={pixelToRem(0, 70)} margin='0 auto' justify='center'>
           <S.FormSection>
             <S.Form>
               <S.TicketIcon />
@@ -145,10 +142,8 @@ function App() {
         </S.Container>
       </S.Section>
       <S.Section  background='url("images/stars.svg"), #0D0E13'>
-        <S.Container maxWidth={pixelToRem(1440)} margin='0 auto'>
+        <S.Container flex='column' padding={pixelToRem(0, 0, 15)} margin='0 auto'>
           <S.SmokeFooter />
-        </S.Container>
-        <S.Container flex='column' padding={pixelToRem(0, 0, 15)} width={pixelToRem(1266)} margin='0 auto'>
           <S.Footer>
             <S.Container>
               <S.Logo logo/>

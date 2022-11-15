@@ -9,13 +9,12 @@ export interface IconProps {
 function Icon ({src, alt, txt}: IconProps) {
   return (
     <>
-      <DivIcon>
-        <ImageIcon  src={src} alt={alt}/>
-
-        <TextIcon>
-          {txt}
-        </TextIcon>
-      </DivIcon>
+        <DivIcon>
+          <ImageIcon  src={src} alt={alt}/>
+          <TextIcon>
+            {txt}
+          </TextIcon>
+        </DivIcon>
     </>
   );
 }

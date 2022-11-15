@@ -4,11 +4,17 @@ import { pixelToRem } from "../utils/pixelToRem";
 
 import { IconProps } from ".";
 
+
 export const DivIcon = styled.div`
     display: flex;
     flex-direction: column;
-    max-width: ${pixelToRem(216)};
-    padding-top: ${pixelToRem(132)};
+    justify-content: space-between;
+    width: ${pixelToRem(206)};
+    margin: ${pixelToRem(0, 90)};
+
+    @media screen and (max-width: 768px){
+        align-items: center;
+    }
 `;
 
 type ImageProps = Omit<IconProps, "txt">;

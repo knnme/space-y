@@ -2,21 +2,65 @@ import styled from "styled-components";
 import { pixelToRem } from "../components/utils/pixelToRem";
 import { ContainersProps } from "../App";
 
+export const Header = styled.div`
+ width: ${pixelToRem(1440)};
+ padding-bottom: ${pixelToRem(95)};
+ 
+
+ @media screen and (max-width: 768px) {
+    display: flex;
+    justify-content: center;
+ }
+
+ @media screen and (min-width: 769px) and (max-width: 1023px) {
+
+ }
+`;
+
+export const Section = styled.div<ContainersProps>`
+  background: ${(props) => props.background};
+  padding-top: ${(props) => props.padding};
+  
+  display: flex;
+  flex-direction: ${(props) => props.flex};
+  align-items: ${(props) => props.align};
+  justify-content: ${(props) => props.justify};
+  padding: ${(props) => props.padding};
+  width: ${(props) => props.width};
+  height: ${(props) => props.height};
+  margin: ${(props) => props.margin};
+  max-width: ${(props) => props.maxWidth};
+  overflow: hidden;
+  
+  @media screen and (max-width: 768px) {
+    display: none;
+ }
+`;
+
 export const Container = styled.div<ContainersProps>` 
  display: flex;
+ flex-wrap: wrap;
  flex-direction: ${(props) => props.flex};
  align-items: ${(props) => props.align};
  justify-content: ${(props) => props.justify};
  padding: ${(props) => props.padding};
  width: ${(props) => props.width};
+ height: ${(props) => props.height};
  margin: ${(props) => props.margin};
  max-width: ${(props) => props.maxWidth};
  overflow: hidden;
-`;
-
-export const Header = styled.div`
- width: 100%;
- padding-bottom: ${pixelToRem(95)};
+ 
+ 
+ 
+  @media screen and (max-width: 768px) {
+    text-align: center;
+    align-items: center;
+    padding: 0;
+    flex-direction: column;
+ }
+  @media screen and (min-width: 769px) and (max-width: 1023px) {
+  
+ }
 `;
 
 export const Logo = styled.div<ContainersProps>`
@@ -24,16 +68,33 @@ export const Logo = styled.div<ContainersProps>`
  height: ${({logo}) => (logo ? pixelToRem(41) : pixelToRem(25))};
  background-image: url("/images/logo.svg");
  background-repeat: no-repeat;
+ 
 `;
 
 export const Main = styled.div`
- width: ${pixelToRem(815)};
+ width: ${pixelToRem(677)};
  height: ${pixelToRem(359)};
  display: flex;
  flex-direction: column;
+ flex: wrap;
+ 
+
+ @media (max-width: 768px) {
+    align-items: center;
+ }
 `;
 
-export const Intro = styled.p`
+export const Astronauts = styled.image`
+ position: absolute;
+ left: 58%;
+ top: 2%;
+ width: ${pixelToRem(550)};
+ height: ${pixelToRem(563)};
+ background-image: url("/images/Astronauts.svg");
+ background-repeat: no-repeat;
+`;
+
+export const Intro = styled.text`
   color: var(--sun);
   font-style: normal;
   font-weight: 500;
@@ -41,6 +102,7 @@ export const Intro = styled.p`
   line-height: ${pixelToRem(32)};
   letter-spacing: ${pixelToRem(5)};
   text-transform: uppercase;
+  
 `;
 
 export const Title = styled.p`
@@ -48,9 +110,11 @@ export const Title = styled.p`
  font: var(--font-display);
  letter-spacing: ${pixelToRem(1)};
  padding: ${pixelToRem(4, 0, 12, 0)};
+ 
 
  span {
   color: var(--sun);
+  
  }
 `;
 
@@ -66,29 +130,7 @@ export const Subtitle = styled.p`
 export const DivButton = styled.div`
   width: ${pixelToRem(264)};
   padding-top: ${pixelToRem(32)};
-`;
-
-export const Astronauts = styled.image`
- position: absolute;
- top: ${pixelToRem(16)};
- right: 0;
- width: ${pixelToRem(550)};
- height: ${pixelToRem(563)};
- background-image: url("/images/Astronauts.svg");
- background-repeat: no-repeat;
-`;
-
-export const DivIcons = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-export const Section = styled.div<ContainersProps>`
-  margin: 0 auto;
-  background: ${(props) => props.background};
-  padding-top: ${(props) => props.padding};
-  /* background: url("/images/stars.svg"), var(--background-section); */
+  
 `;
 
 export const ContentAbout = styled.div `
@@ -96,6 +138,7 @@ export const ContentAbout = styled.div `
   justify-content: space-around;
   align-items: center;
   padding-bottom: ${pixelToRem(95)};
+  
 `;
 
 export const ImageMars = styled.div`
@@ -151,20 +194,21 @@ export const ButtonSubscribe = styled.div`
 export const LeftGallery = styled.div `
   display: flex;
   flex-direction: column;
-  min-width: ${pixelToRem(440)};
+  width: ${pixelToRem(340)};
   height: ${pixelToRem(229)};
 
 `;
 
 export const Gallery = styled.div`
-  display: flex;
-  width: ${pixelToRem(1440)};
+  width: ${pixelToRem(800)};
   height: ${pixelToRem(353)};
   border-radius: ${pixelToRem(10)};
+  overflow: hidden;
 `;
 
 export const ImgGallery = styled.img<ContainersProps>`
 border-radius: ${pixelToRem(10)};
+
 `;
 
 export const Lines = styled.image`
@@ -176,6 +220,11 @@ export const Lines = styled.image`
   top: ${pixelToRem(1000)};
   opacity: 0.4;
   z-index: 0;
+
+  @media (max-width: 768px) {
+    display: none;
+    
+  }
 `;
 
 export const FormSection = styled.div`
@@ -200,7 +249,6 @@ width: ${pixelToRem(56)};
 height: ${pixelToRem(56)};
 margin-bottom: ${pixelToRem(16)};
 background-image: url('/images/icon-ticket.svg');
-
 `;
 
 export const FormTextMain = styled.p`
@@ -234,6 +282,7 @@ export const Checkbox = styled.div`
  border-radius: ${pixelToRem(6)};
  margin-right: ${pixelToRem(16)};
  border: 1.5px solid #FFF;
+ 
 `;
 
 export const RocketIllustrator = styled.image`
@@ -242,19 +291,23 @@ export const RocketIllustrator = styled.image`
  margin-left: ${pixelToRem(62)};
  background-image: url("/images/rocket_illustra.svg");
  background-repeat: no-repeat;
+ 
 `;
 
 export const SmokeFooter = styled.image`
- width: ${pixelToRem(1550)};
+ width: ${pixelToRem(1300)};
  height: ${pixelToRem(275)};
  background-image: url("/images/smoke-footer.svg");
  background-repeat: no-repeat;
+ 
 `;
 export const Footer = styled.div `
   display: flex;
   justify-content: space-between;
+  
 `;
 
 export const ContainerFooter = styled.div`
 display: flex;
+
 `;

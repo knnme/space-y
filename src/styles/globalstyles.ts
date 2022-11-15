@@ -14,7 +14,9 @@ body {
     font-family: 'Heebo', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: var(--background);
+    background: var(--background); 
+    max-width: ${pixelToRem(1340)};
+    margin: 0 auto;
 }
 
 :root {
